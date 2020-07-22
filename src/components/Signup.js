@@ -8,7 +8,7 @@ function Signup() {
     return (
         <div>
             <h2>Signup</h2>
-            <form onSubmit={signMeUp()}>
+            <form onSubmit={signMeUp()} className>
                 <label htmlFor="username">Username</label>
                 <input type="text" id="username"></input>
 
