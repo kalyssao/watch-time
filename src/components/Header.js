@@ -6,8 +6,10 @@ import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import logo from '../assets/logo.png'
 import styled from 'styled-components'
-import Login from './Login'
+
+import Profile from './Profile'
 import Signup from './Signup'
+import Login from './Login'
 import Main from './Main'
 
 import '../App.css'
@@ -52,6 +54,10 @@ function Header() {
                         <Link to="/signup">
                             <Button className="justify-content-end">Sign Up</Button>
                         </Link>
+
+                        <Link to="/profile">
+                            <Button className="justify-content-end">Profile Test</Button>
+                        </Link>
                     </ButtonDiv>
 
                 </Navbar>
@@ -62,6 +68,8 @@ function Header() {
                     <Route path="/login" component={Login}/>
 
                     <Route path="/signup" component={Signup}/>
+
+                    <Route path="/profile" component={Profile}/>
 
                 </Switch>
 
