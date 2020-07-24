@@ -41,27 +41,55 @@ const FormWrapper = styled.div `
     }
 `
 
-export default function Login() {
+const INITIAL_STATE = {
+    username: '',
+    email: '',
+    passwordOne: '',
+    passwordTwo: '',
+    error: null,
+}
 
-    function logIn(event, email, password) {
-        event.preventDefault()
+class Login extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = { ...INITIAL_STATE }
     }
 
-    return (
-        <Container>
-            <h2>Login</h2>
-            <FormWrapper>
-                <form onSubmit={logIn}>
-                    <label htmlFor="email">Email</label>
-                    <input type="text" id="email"></input>
+    login = event => {
+        const { email, password } = this.state
 
-                    <label htmlFor="password">Password</label>
-                    <input type="password" id="password"></input>
+        event.preventDefault()
+        this.props.firebase
+        .doSignInWithEmailAndPassword(email, password)
+        .then(() => {
+            this.setState({ ...INITIAL_STATE})
+            //this.props.history.push(ROUTES.HOME)
+        })
+        .catch(error => {
+            this.setState({ error })
+        })
+        console.log("Pressed Log In")
+    }
 
-                    <button type="submit" className="btn btn-primary">Log In</button>
-                </form>
-                <p className="text-center my-3">Forgot Password?</p>
-            </FormWrapper>
-        </Container>
-    )
+    render() {
+        return (
+            <Container>
+                <h2>Login</h2>
+                <FormWrapper>
+                    <form onSubmit={this.login}>
+                        <label htmlFor="email">Email</label>
+                        <input type="text" id="email"></input>
+
+                        <label htmlFor="password">Password</label>
+                        <input type="password" id="password"></input>
+
+                        <button type="submit" className="btn btn-primary">Log In</button>
+                    </form>
+                    <p className="text-center my-3">Forgot Password?</p>
+                </FormWrapper>
+            </Container>
+        )
+    }
 }
+
+export default Login
