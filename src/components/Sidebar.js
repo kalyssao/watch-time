@@ -1,5 +1,5 @@
 import React from 'react'
-import SearchBar from './SearchBar'
+import SearchShows from './searchShows'
 import styled from 'styled-components'
 
 const SidebarDiv = styled.div`
@@ -21,7 +21,7 @@ const SidebarButton = styled.button`
 function Sidebar() {
     return (
         <SidebarDiv>
-            <SearchBar></SearchBar>
+            <SearchShows></SearchShows>
             <ul>
                 <SidebarButton>Watchlist</SidebarButton>
                 <SidebarButton>Favorites</SidebarButton>

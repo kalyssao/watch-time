@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ShowTile() {
+function Tile() {
     return (
         <div>
             <h1>Hello from tile</h1>
@@ -8,4 +8,4 @@ function ShowTile() {
     )
 }
 
-export default ShowTile
+export default Tile
