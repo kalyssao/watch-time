@@ -14,7 +14,26 @@ var config = {
     appId: process.env.REACT_APP_APP_ID
 }
 
-firebase.initializeApp(config)
+class Firebase {
+    constructor() {
+        firebase.initializeApp(config)
+
+        this.auth = firebase.auth()
+    }
+
+    doCreateUserWithEmailAndPassword = (email, password) => 
+    this.auth.createUserWithEmailAndPassword(email, password)
+
+    doSignInWithEmailAndPassword = (email, password) =>
+    this.auth.signInWithEmailAndPassword(email, password)
+
+    doSignOut = () => this.auth.signOut()
+
+    doPasswordReset = (email) => this.auth.sendPasswordResetEmail(email)
+
+    doPasswordUpdate = (password) => this.auth.updatePassword(password)
+}
+
 firebase.firestore()
 
 export default firebase
