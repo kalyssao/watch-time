@@ -19,6 +19,7 @@ class Firebase {
         firebase.initializeApp(config)
 
         this.auth = firebase.auth()
+        firebase.firestore()
     }
 
     doCreateUserWithEmailAndPassword = (email, password) => 
@@ -34,6 +35,4 @@ class Firebase {
     doPasswordUpdate = (password) => this.auth.updatePassword(password)
 }
 
-firebase.firestore()
-
-export default firebase
+export default Firebase

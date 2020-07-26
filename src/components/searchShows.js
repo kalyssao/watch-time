@@ -22,11 +22,17 @@ class SearchShows extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            banner: '',
-            rating: '',
-            name: '',
-            slug: ''
+            id: Number,
+            name: String,
+            imageURL: String,
+            query: String
+            //rating: '',
+            //slug: ''
         }
+    }
+
+    handleFormChange = (e) => {
+        this.setState({ query: e.target.value })
     }
 
     searchShows = async (e) => {
@@ -38,6 +44,11 @@ class SearchShows extends React.Component {
         axios.get(url)
         .then(response => {
             console.log(response.data)
+            this.setState({ 
+                id: response.data.id,
+                name: response.data.seriesName,
+                imageURL: response.data.image
+            })
         })
         .catch(error => {
             console.log(error)
@@ -48,7 +59,7 @@ class SearchShows extends React.Component {
         return (
             <div>
                 <form className="searchForm" onSubmit={this.searchShows}>
-                    <Input placeholder="Enter TV show"/>
+                    <Input placeholder="Enter TV show" name="query" onChange={this.handleFormChange}/>
                     <Button type="submit">Submit</Button>
                 </form> 
             </div>
