@@ -3,9 +3,11 @@ import axios from '../services/tvdb'
 import styled from 'styled-components'
 import { Button } from 'react-bootstrap'
 
+import { Link } from 'react-router-dom'
+
 const Input = styled.input.attrs(props => ({
     type: 'text'
-}))`
+}))` 
     border-radius: 20px;
     margin: 1rem;
     padding: 0.5rem;
@@ -19,6 +21,7 @@ const Input = styled.input.attrs(props => ({
 `
 
 class SearchShows extends React.Component {
+    const [search, setSearch] = useState(" ")
     constructor(props) {
         super(props)
         this.state = {
@@ -33,6 +36,7 @@ class SearchShows extends React.Component {
 
     handleFormChange = (e) => {
         this.setState({ query: e.target.value })
+        //this.setSearch("e.target.value")
     }
 
     searchShows = async (e) => {
@@ -60,6 +64,9 @@ class SearchShows extends React.Component {
             <div>
                 <form className="searchForm" onSubmit={this.searchShows}>
                     <Input placeholder="Enter TV show" name="query" onChange={this.handleFormChange}/>
+                    <Link to={`/search/${search}`}>
+                    </Link>
+                    
                     <Button type="submit">Submit</Button>
                 </form> 
             </div>

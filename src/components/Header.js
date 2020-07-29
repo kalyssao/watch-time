@@ -71,6 +71,8 @@ function Header() {
 
                     <Route path="/profile" component={Profile}/>
 
+                    <Route path="/search/:searchTerm"
+
                 </Switch>
 
             </div>

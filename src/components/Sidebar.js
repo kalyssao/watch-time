@@ -32,3 +32,5 @@ function Sidebar() {
 }
 
 export default Sidebar
+
+flex direction - column

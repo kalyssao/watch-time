@@ -1,7 +1,7 @@
 import React from 'react'
-import Tile from './Tile.js'
+import ShowCard from './ShowCard.js'
 
-function Tiles() {
+function UserShows() {
     const { isLoading } = this.props
 
     const loadingMessage = <span className="d-flex m-auto">Loading...</span>
@@ -19,4 +19,13 @@ function Tiles() {
     )
 }
 
-export default Tiles
+export default UserShows
+
+display: flex (parent container)
+flex-wrap: wrap
+
+card info
+display: flex
+
+display flex
+space between
