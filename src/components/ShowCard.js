@@ -1,11 +1,20 @@
 import React from 'react'
+import styled from 'styled-components'
+
+const VideoCard = styled.div `
+
+`
+
+const VideoCardInfo = styled.div`
+
+`
 
 function ShowCard({image, title, rating}) {
     return (
-        <div className="videoCard">
+        <VideoCard>
             <img src="image" alt=""/>
 
-            <div className="videoCard__info">
+            <VideoCardInfo>
                 <div className="">
                 
                 </div>
@@ -14,8 +23,8 @@ function ShowCard({image, title, rating}) {
                     
                 </div>
 
-            </div>
-        </div>
+            </VideoCardInfo>
+        </VideoCard>
     )
 }
 

@@ -1,9 +1,6 @@
 import React from "react"
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
-//import Button from 'react-bootstrap/Button'
-import Navbar from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
 import logo from '../assets/logo.png'
 import styled from 'styled-components'
 
@@ -14,8 +11,26 @@ import Main from './Main'
 
 import '../App.css'
 
+const Navbar = styled.div `
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: black;
+`
+
+const Brand = styled.div `
+    display: flex;
+    margin-left: 15px;
+    padding: 5px;
+    color: white;
+`
+
+const AppName = styled.h1 `
+    padding: 5px;
+`
+
 const ButtonDiv = styled.div `
-    float: right;
+    display: flex;
 `
 
 const Button = styled.button`
@@ -38,41 +53,33 @@ function Header() {
     return (
         <Router>
             <div>
-                <Navbar className="bg-dark" variant="dark">
-                    <Nav>
-                        <Link to="/">
-                            <Navbar.Brand>
-                                <img className="App-logo" alt="watchtime logo" src={logo} /> WatchTime
-                            </Navbar.Brand>{' '}
-                        </Link>
-                    </Nav>
-                    <ButtonDiv className="ml-auto">
+                <Navbar>
+                    <Link to="/"> 
+                        <Brand>
+                            <img className="App-logo" alt="logo" src={logo}></img>
+                            <AppName>WatchTime</AppName>
+                        </Brand>
+                    </Link>
+                    
+                    <ButtonDiv>
                         <Link to="/login">
-                            <Button className="justify-content-end"> Log In</Button>
+                            <Button> Log In</Button>
                         </Link>
-
                         <Link to="/signup">
-                            <Button className="justify-content-end">Sign Up</Button>
+                            <Button>Sign Up</Button>
                         </Link>
-
                         <Link to="/profile">
-                            <Button className="justify-content-end">Profile Test</Button>
+                            <Button>Profile Test</Button>
                         </Link>
                     </ButtonDiv>
-
                 </Navbar>
 
                 <Switch>
                     <Route exact path="/" component={Main}/>
-
                     <Route path="/login" component={Login}/>
-
                     <Route path="/signup" component={Signup}/>
-
                     <Route path="/profile" component={Profile}/>
-
-                    <Route path="/search/:searchTerm"
-
+                    <Route path="/search/:searchTerm"/>
                 </Switch>
 
             </div>

@@ -21,14 +21,13 @@ const Input = styled.input.attrs(props => ({
 `
 
 class SearchShows extends React.Component {
-    const [search, setSearch] = useState(" ")
     constructor(props) {
         super(props)
         this.state = {
             id: Number,
             name: String,
             imageURL: String,
-            query: String
+            query: String,
             //rating: '',
             //slug: ''
         }
@@ -64,7 +63,7 @@ class SearchShows extends React.Component {
             <div>
                 <form className="searchForm" onSubmit={this.searchShows}>
                     <Input placeholder="Enter TV show" name="query" onChange={this.handleFormChange}/>
-                    <Link to={`/search/${search}`}>
+                    <Link to={`/search/${this.props.query}`}>
                     </Link>
                     
                     <Button type="submit">Submit</Button>
