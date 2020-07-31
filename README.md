@@ -2,7 +2,10 @@
 
 A React application built to help users track how much time they've spent watching tv shows.
 
-Makes use of Firebase authentication and Redux for user state management.
+### Concepts
+- Authentication (Firebase) 
+- State management (Redux)
+- Higher Order Functions (API calls)
 
 After cloning the repository, enter the project directory and run:
 
