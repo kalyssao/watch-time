@@ -6,18 +6,19 @@ const VideoCard = styled.div `
     border-radius: 10px;
     box-shadow: 1px 1px 5px rgba(0,0,0,0.25);
     margin-bottom: 2rem;
+    margin-left: 2rem;
     padding: 50px;
     width: 30%;
     background-color: white;
+    display: flex;
 `
 
-const VideoCardImage = styled.image`
+const VideoCardImage = styled.img`
     height: 240px;
     width: 200px;
 `
 
 const VideoCardInfo = styled.div`
-
 `
 
 function ShowCard({ image, title, rating, desc }) {
