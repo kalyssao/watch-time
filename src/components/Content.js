@@ -10,10 +10,12 @@ const ContentContainer = styled.div`
 class Content extends React.Component() {
     render(){
         return (
-            <Sidebar></Sidebar>
-            <ContentContainer>
-
-            </ContentContainer>
+            <>
+                <Sidebar></Sidebar>
+                <ContentContainer>
+                    <h1>Test</h1>
+                </ContentContainer>
+            </>
         )
     }
 }

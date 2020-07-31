@@ -1,5 +1,6 @@
 import React from 'react'
 import Sidebar from './Sidebar'
+import UserShows from './UserShows'
 import styled from 'styled-components'
 
 const ProfileContainer = styled.div`
@@ -11,7 +12,7 @@ function Profile () {
         <div>
             <Sidebar></Sidebar>
             <ProfileContainer>
-                <h1>Some text to check</h1>
+                <UserShows/>
             </ProfileContainer>
         </div>
     )

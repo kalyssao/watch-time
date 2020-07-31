@@ -5,7 +5,7 @@ const FooterDiv = styled.div`
     color: white;
     margin-top: 1rem;
     padding: 1rem;
-    background-color: gold;
+    background-color: black;
     position: fixed;
     bottom: 0;
     left: 0;
