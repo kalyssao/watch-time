@@ -1,9 +1,12 @@
 import React from 'react'
 import axios from '../services/tvdb'
 import styled from 'styled-components'
-import { Button } from 'react-bootstrap'
 
 import { Link } from 'react-router-dom'
+
+const SearchContainer = styled.div`
+    display: flex;
+`
 
 const Input = styled.input.attrs(props => ({
     type: 'text'
@@ -18,6 +21,14 @@ const Input = styled.input.attrs(props => ({
     ::placeholder {
         color: gold
     }
+`
+const Button = styled.button`
+    display: inline-block;
+    border-radius: 3px;
+    width: 75%;
+    padding: 0.5rem 0;
+    margin: 0.5rem 1rem;
+    border: 2px gold;
 `
 
 class SearchShows extends React.Component {
@@ -60,15 +71,15 @@ class SearchShows extends React.Component {
 
     render() {
         return (
-            <div>
+            <SearchContainer>
                 <form className="searchForm" onSubmit={this.searchShows}>
                     <Input placeholder="Enter TV show" name="query" onChange={this.handleFormChange}/>
                     <Link to={`/search/${this.props.query}`}>
                     </Link>
                     
-                    <Button type="submit">Submit</Button>
+                    <Button>Submit</Button>
                 </form> 
-            </div>
+            </SearchContainer>
         )
     }
 }
