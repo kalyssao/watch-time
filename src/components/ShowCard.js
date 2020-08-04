@@ -91,7 +91,7 @@ function ShowCard({ image, title, rating, desc }) {
                 </VideoCardInfo>
 
                 <RatingsWrapper>
-
+                    <Rating number="4"/>
                 </RatingsWrapper>
 
             </VideoCard>
