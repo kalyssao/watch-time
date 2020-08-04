@@ -1,5 +1,5 @@
 import React from 'react'
-import ShowCard from './ShowCard.js'
+import ShowCard from './ShowCard'
 import styled from 'styled-components'
 
 const VideoDisplay = styled.div`
