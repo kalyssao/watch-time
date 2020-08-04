@@ -19,7 +19,7 @@ const FooterDiv = styled.div`
 function Footer() {
     return (
         <FooterDiv>
-            <p><a href="http://kalyssao.github.io"> The Lyss</a> built this with <span role="img" aria-label="heart emoji" >❤️ {' '}</span></p>
+            <p><a href="http://kalyssao.github.io"> The Lyss</a> is building this with <span role="img" aria-label="heart emoji" >❤️ {' '}</span></p>
         </FooterDiv>
     )
 }
