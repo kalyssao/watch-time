@@ -4,9 +4,9 @@ import SidebarRow from './SidebarRow'
 import styled from 'styled-components'
 
 const SidebarContainer = styled.div`
-    flex: 0.2;
     background-color: gold;
     color: white;
+    width: 20%;
 `
 
 function Sidebar() {

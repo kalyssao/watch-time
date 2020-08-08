@@ -5,6 +5,7 @@ import styled from 'styled-components'
 const VideoDisplay = styled.div`
         display: flex;
         flex-wrap: wrap;
+        width: 80%;
     `
 function UserShows() {
     //const { isLoading } = this.props
