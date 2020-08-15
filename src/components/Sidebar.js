@@ -1,5 +1,5 @@
 import React from 'react'
-import SearchShows from './searchShows'
+import SearchBar from './SearchBar'
 import SidebarRow from './SidebarRow'
 import styled from 'styled-components'
 
@@ -9,10 +9,10 @@ const SidebarContainer = styled.div`
     width: 20%;
 `
 
-function Sidebar() {
+export default function Sidebar() {
     return (
         <SidebarContainer>
-            <SearchShows></SearchShows>
+            <SearchBar/>
             <ul>
                 <SidebarRow title="Watchlist"/>
                 <SidebarRow title="Favorites"/>
@@ -21,7 +21,5 @@ function Sidebar() {
         </SidebarContainer>
     )
 }
-
-export default Sidebar
 
 //flex direction - column
